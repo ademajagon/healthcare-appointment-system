@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace Domain.Interfaces
 {
-    public interface IDoctorRepository : IRepository<Doctor>
+    public interface IAppointmentRepository
     {
-        Task<Doctor> GetByIdAsync(int id);
+        Task<Appointment> AddAsync(Appointment appointment);
+        Task<Appointment> GetByIdAsync(int id);
     }
 }

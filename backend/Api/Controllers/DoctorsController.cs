@@ -1,6 +1,5 @@
 ﻿using Application.DTOs;
 using Application.Interfaces;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers
@@ -36,14 +35,14 @@ namespace Api.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> AddDoctor([FromBody] DoctorDto doctorDto)
+        public async Task<ActionResult<DoctorDto>> AddDoctor([FromBody] DoctorDto doctorDto)
         {
             await _doctorService.AddDoctorAsync(doctorDto);
             return CreatedAtAction(nameof(GetDoctorById), new { id = doctorDto.Id }, doctorDto);
         }
 
         [HttpPut("{id}")]
-        public async Task<ActionResult> UpdateDoctor(int id, [FromBody] DoctorDto doctorDto)
+        public async Task<ActionResult<DoctorDto>> UpdateDoctor(int id, [FromBody] DoctorDto doctorDto)
         {
             if (id != doctorDto.Id)
             {
@@ -55,7 +54,7 @@ namespace Api.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<ActionResult> DeleteDoctor(int id)
+        public async Task<ActionResult<DoctorDto>> DeleteDoctor(int id)
         {
             await _doctorService.DeleteDoctorAsync(id);
             return NoContent();
