@@ -4,14 +4,27 @@ services:
     build:
       context: C:\Users\agon-\Desktop\Dev\healthcare-appointment-system\backend
       dockerfile: Api/Dockerfile
+    depends_on:
+      db:
+        condition: service_started
+        required: true
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       ASPNETCORE_HTTP_PORTS: "8080"
       ASPNETCORE_HTTPS_PORTS: "8081"
+      ConnectionStrings__DefaultConnection: Server=AGON\\MSSQLSERVER01;Database=HealthcareAppointments;Trusted_Connection=true;TrustServerCertificate=true
     image: api
     networks:
-      default: null
+      app-network: null
     ports:
+      - mode: ingress
+        target: 8080
+        published: "8080"
+        protocol: tcp
+      - mode: ingress
+        target: 8081
+        published: "8081"
+        protocol: tcp
       - mode: ingress
         target: 8080
         protocol: tcp
@@ -31,6 +44,19 @@ services:
         read_only: true
         bind:
           create_host_path: true
+  db:
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_PID: Developer
+    image: mcr.microsoft.com/mssql/server
+    networks:
+      app-network: null
+    ports:
+      - mode: ingress
+        target: 1433
+        published: "1433"
+        protocol: tcp
 networks:
-  default:
-    name: dockercompose5350667238261435052_default
+  app-network:
+    name: dockercompose5350667238261435052_app-network
+    driver: bridge
