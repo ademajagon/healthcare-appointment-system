@@ -1,0 +1,14 @@
+C:\Users\agon-\Desktop\Dev\healthcare-appointment-system\backend\bin\Debug\Api.deps.json
+C:\Users\agon-\Desktop\Dev\healthcare-appointment-system\backend\bin\Debug\Api.runtimeconfig.json
+C:\Users\agon-\Desktop\Dev\healthcare-appointment-system\backend\bin\Debug\appsettings.Development.json
+C:\Users\agon-\Desktop\Dev\healthcare-appointment-system\backend\bin\Debug\appsettings.json
+C:\Users\agon-\Desktop\Dev\healthcare-appointment-system\backend\bin\Debug\Api.exe
+C:\Users\agon-\Desktop\Dev\healthcare-appointment-system\backend\bin\Debug\Api.dll
+C:\Users\agon-\Desktop\Dev\healthcare-appointment-system\backend\bin\Debug\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\agon-\Desktop\Dev\healthcare-appointment-system\backend\bin\Debug\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\agon-\Desktop\Dev\healthcare-appointment-system\backend\bin\Debug\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\agon-\Desktop\Dev\healthcare-appointment-system\backend\bin\Debug\Microsoft.OpenApi.dll
+C:\Users\agon-\Desktop\Dev\healthcare-appointment-system\backend\bin\Debug\Api.pdb
+C:\Users\agon-\Desktop\Dev\healthcare-appointment-system\backend\obj\Debug\docker-compose.dcproj.AssemblyReference.cache
+C:\Users\agon-\Desktop\Dev\healthcare-appointment-system\backend\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
+C:\Users\agon-\Desktop\Dev\healthcare-appointment-system\backend\obj\Debug\docker-c.35A3FFBA.Up2Date
