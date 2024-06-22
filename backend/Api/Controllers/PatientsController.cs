@@ -1,5 +1,6 @@
 ﻿using Application.DTOs;
 using Application.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers
@@ -15,7 +16,7 @@ namespace Api.Controllers
             _patientService = patientService ?? throw new ArgumentNullException(nameof(patientService));
         }
 
-        [HttpGet]
+        [HttpGet, Authorize]
         public async Task<ActionResult<IEnumerable<PatientDto>>> GetAllPatients()
         {
             var patients = await _patientService.GetAllPatientsAsync();
