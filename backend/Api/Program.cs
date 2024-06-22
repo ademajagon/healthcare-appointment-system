@@ -1,38 +1,39 @@
 using Application.Interfaces;
 using Application.Services;
+using Domain.Entities.Identity;
 using Domain.Interfaces;
 using Infrastructure.Data;
 using Infrastructure.Repositories;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.Filters;
+using System.Text;
+using Application;
+using Domain;
+using Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllers();
 
-builder.Services.AddScoped<IDoctorRepository, DoctorRepository>();
-builder.Services.AddScoped<IDoctorService, DoctorService>();
+// Add custom service configurations
+builder.Services.AddInfrastructure(builder.Configuration);
+builder.Services.AddApplication();
 
-builder.Services.AddScoped<IPatientRepository, PatientRepository>();
-builder.Services.AddScoped<IPatientService, PatientService>();
-
-builder.Services.AddScoped<IAppointmentRepository, AppointmentRepository>();
-builder.Services.AddScoped<IAppointmentService, AppointmentService>();
-
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-{
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
-});
-
+// Add Authorization and Identity
 builder.Services.AddAuthorization();
 
-builder.Services.AddIdentityApiEndpoints<IdentityUser>()
+builder.Services.AddIdentityApiEndpoints<ApplicationUser>()
+    .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>();
 
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddScoped<UserManager<ApplicationUser>>();
+builder.Services.AddScoped<RoleManager<IdentityRole>>();
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
 {
@@ -46,20 +47,7 @@ builder.Services.AddSwaggerGen(options =>
     options.OperationFilter<SecurityRequirementsOperationFilter>();
 });
 
-/*// Configure CORS
-builder.Services.AddCors(options =>
-{
-    options.AddDefaultPolicy(builder =>
-    {
-        builder.AllowAnyOrigin()
-               .AllowAnyMethod()
-               .AllowAnyHeader();
-    });
-});*/
-
 var app = builder.Build();
-
-/*app.UseCors();*/
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -69,7 +57,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "HealthcareAppointmentSystem  v1"));
 }
 
-app.MapIdentityApi<IdentityUser>();
+app.MapIdentityApi<ApplicationUser>();
 
 app.UseHttpsRedirection();
 

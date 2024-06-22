@@ -150,3 +150,4 @@ C:\Users\agon-\Desktop\Dev\healthcare-appointment-system\backend\Api\obj\Debug\n
 C:\Users\agon-\Desktop\Dev\healthcare-appointment-system\backend\Api\obj\Debug\net8.0\Api.pdb
 C:\Users\agon-\Desktop\Dev\healthcare-appointment-system\backend\Api\obj\Debug\net8.0\Api.genruntimeconfig.cache
 C:\Users\agon-\Desktop\Dev\healthcare-appointment-system\backend\Api\obj\Debug\net8.0\ref\Api.dll
+C:\Users\agon-\Desktop\Dev\healthcare-appointment-system\backend\Api\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

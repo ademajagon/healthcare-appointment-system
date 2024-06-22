@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class IntiCreate : Migration
+    public partial class InitCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -32,6 +32,10 @@ namespace Infrastructure.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Gender = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    DateOfBirth = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -225,6 +229,24 @@ namespace Infrastructure.Migrations
                 });
 
             migrationBuilder.InsertData(
+                table: "AspNetRoles",
+                columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
+                values: new object[,]
+                {
+                    { "65c616c0-3b3b-4e15-b82f-841466a57e27", null, "Patient", "PATIENT" },
+                    { "86db2112-5804-44ae-8013-9bb59e2d731f", null, "Doctor", "DOCTOR" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "AspNetUsers",
+                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "DateOfBirth", "Email", "EmailConfirmed", "FirstName", "Gender", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
+                values: new object[,]
+                {
+                    { "7cd7f373-59d4-4a1b-9c68-9727d10eb0dc", 0, "53ce2a28-7eab-4a9f-af62-9cb437b50c11", new DateTime(1980, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "doctor@example.com", true, "DoctorFirstName", "Male", "DoctorLastName", false, null, "DOCTOR@EXAMPLE.COM", "DOCTOR@EXAMPLE.COM", "AQAAAAIAAYagAAAAEDn1us7s8LeNMywPZBMh+fwfDIMrHbzcNYhfwXifakRWANrrv2oTITXjPCaw6h1K3Q==", null, false, "ef32f57f-f0fa-4223-bbfb-f69c230850eb", false, "doctor@example.com" },
+                    { "8a880be1-0f45-4feb-bc57-230828565c30", 0, "e51213ee-07b8-42fa-a5e5-e8c36c7afa7c", new DateTime(1990, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "patient@example.com", true, "PatientFirstName", "Female", "PatientLastName", false, null, "PATIENT@EXAMPLE.COM", "PATIENT@EXAMPLE.COM", "AQAAAAIAAYagAAAAEFmjyl2VOWi6foWKhv3jWdEnLEvkaQ4ig5/Ak1Av+ZcCtT4NXz0ru7QOqsOJ4eX9qQ==", null, false, "2cd07854-5f7b-4b78-a570-7b28efb955d4", false, "patient@example.com" }
+                });
+
+            migrationBuilder.InsertData(
                 table: "Doctors",
                 columns: new[] { "Id", "Biography", "FirstName", "ImageUrl", "IsAvailable", "LastName", "Specialization" },
                 values: new object[,]
@@ -236,10 +258,15 @@ namespace Infrastructure.Migrations
             migrationBuilder.InsertData(
                 table: "Patients",
                 columns: new[] { "Id", "Address", "DateOfBirth", "Email", "FirstName", "Gender", "LastName", "PhoneNumber" },
+                values: new object[] { 11, "456 Oak St", new DateTime(1990, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "patient@example.com", "Jane", "Female", "Smith", "987-654-3210" });
+
+            migrationBuilder.InsertData(
+                table: "AspNetUserRoles",
+                columns: new[] { "RoleId", "UserId" },
                 values: new object[,]
                 {
-                    { 11, "123 Main St", new DateTime(1980, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "john.doe@example.com", "John", "Male", "Doe", "123-456-7890" },
-                    { 12, "456 Oak St", new DateTime(1990, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "jane.smith@example.com", "Jane", "Female", "Smith", "987-654-3210" }
+                    { "86db2112-5804-44ae-8013-9bb59e2d731f", "7cd7f373-59d4-4a1b-9c68-9727d10eb0dc" },
+                    { "65c616c0-3b3b-4e15-b82f-841466a57e27", "8a880be1-0f45-4feb-bc57-230828565c30" }
                 });
 
             migrationBuilder.CreateIndex(
