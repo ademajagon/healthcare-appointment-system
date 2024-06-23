@@ -3,12 +3,116 @@
   "WorkspaceRootPath": "C:\\Users\\agon-\\Desktop\\Dev\\healthcare-appointment-system\\backend\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{45633A85-77D0-4620-81A7-7FFBDF6F72E6}|Api\\Api.csproj|c:\\users\\agon-\\desktop\\dev\\healthcare-appointment-system\\backend\\api\\controllers\\doctorscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45633A85-77D0-4620-81A7-7FFBDF6F72E6}|Api\\Api.csproj|solutionrelative:api\\controllers\\doctorscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{45633A85-77D0-4620-81A7-7FFBDF6F72E6}|Api\\Api.csproj|c:\\users\\agon-\\desktop\\dev\\healthcare-appointment-system\\backend\\api\\controllers\\appointmentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{45633A85-77D0-4620-81A7-7FFBDF6F72E6}|Api\\Api.csproj|solutionrelative:api\\controllers\\appointmentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{45633A85-77D0-4620-81A7-7FFBDF6F72E6}|Api\\Api.csproj|c:\\users\\agon-\\desktop\\dev\\healthcare-appointment-system\\backend\\api\\controllers\\patientscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45633A85-77D0-4620-81A7-7FFBDF6F72E6}|Api\\Api.csproj|solutionrelative:api\\controllers\\patientscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45633A85-77D0-4620-81A7-7FFBDF6F72E6}|Api\\Api.csproj|c:\\users\\agon-\\desktop\\dev\\healthcare-appointment-system\\backend\\api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45633A85-77D0-4620-81A7-7FFBDF6F72E6}|Api\\Api.csproj|solutionrelative:api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB698C15-0C49-4D5D-AE12-BC50CE370AF6}|Application\\Application.csproj|c:\\users\\agon-\\desktop\\dev\\healthcare-appointment-system\\backend\\application\\dtos\\appointmentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB698C15-0C49-4D5D-AE12-BC50CE370AF6}|Application\\Application.csproj|solutionrelative:application\\dtos\\appointmentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB698C15-0C49-4D5D-AE12-BC50CE370AF6}|Application\\Application.csproj|c:\\users\\agon-\\desktop\\dev\\healthcare-appointment-system\\backend\\application\\services\\appointmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB698C15-0C49-4D5D-AE12-BC50CE370AF6}|Application\\Application.csproj|solutionrelative:application\\services\\appointmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45633A85-77D0-4620-81A7-7FFBDF6F72E6}|Api\\Api.csproj|c:\\users\\agon-\\desktop\\dev\\healthcare-appointment-system\\backend\\api\\middleware\\exceptionmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45633A85-77D0-4620-81A7-7FFBDF6F72E6}|Api\\Api.csproj|solutionrelative:api\\middleware\\exceptionmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7701593B-3F06-4E42-AD81-5E9D7D4C2445}|Domain\\Domain.csproj|c:\\users\\agon-\\desktop\\dev\\healthcare-appointment-system\\backend\\domain\\exceptions\\validationexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7701593B-3F06-4E42-AD81-5E9D7D4C2445}|Domain\\Domain.csproj|solutionrelative:domain\\exceptions\\validationexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7701593B-3F06-4E42-AD81-5E9D7D4C2445}|Domain\\Domain.csproj|c:\\users\\agon-\\desktop\\dev\\healthcare-appointment-system\\backend\\domain\\exceptions\\customapplicationexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7701593B-3F06-4E42-AD81-5E9D7D4C2445}|Domain\\Domain.csproj|solutionrelative:domain\\exceptions\\customapplicationexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7701593B-3F06-4E42-AD81-5E9D7D4C2445}|Domain\\Domain.csproj|c:\\users\\agon-\\desktop\\dev\\healthcare-appointment-system\\backend\\domain\\exceptions\\notfoundexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7701593B-3F06-4E42-AD81-5E9D7D4C2445}|Domain\\Domain.csproj|solutionrelative:domain\\exceptions\\notfoundexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{45633A85-77D0-4620-81A7-7FFBDF6F72E6}|Api\\Api.csproj|c:\\users\\agon-\\desktop\\dev\\healthcare-appointment-system\\backend\\api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{45633A85-77D0-4620-81A7-7FFBDF6F72E6}|Api\\Api.csproj|solutionrelative:api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB698C15-0C49-4D5D-AE12-BC50CE370AF6}|Application\\Application.csproj|c:\\users\\agon-\\desktop\\dev\\healthcare-appointment-system\\backend\\application\\applicationservicesregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB698C15-0C49-4D5D-AE12-BC50CE370AF6}|Application\\Application.csproj|solutionrelative:application\\applicationservicesregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB698C15-0C49-4D5D-AE12-BC50CE370AF6}|Application\\Application.csproj|c:\\users\\agon-\\desktop\\dev\\healthcare-appointment-system\\backend\\application\\validators\\patientdtovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB698C15-0C49-4D5D-AE12-BC50CE370AF6}|Application\\Application.csproj|solutionrelative:application\\validators\\patientdtovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB698C15-0C49-4D5D-AE12-BC50CE370AF6}|Application\\Application.csproj|c:\\users\\agon-\\desktop\\dev\\healthcare-appointment-system\\backend\\application\\validators\\bookappointmentdtovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB698C15-0C49-4D5D-AE12-BC50CE370AF6}|Application\\Application.csproj|solutionrelative:application\\validators\\bookappointmentdtovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB698C15-0C49-4D5D-AE12-BC50CE370AF6}|Application\\Application.csproj|c:\\users\\agon-\\desktop\\dev\\healthcare-appointment-system\\backend\\application\\validators\\appointmentdtovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB698C15-0C49-4D5D-AE12-BC50CE370AF6}|Application\\Application.csproj|solutionrelative:application\\validators\\appointmentdtovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB698C15-0C49-4D5D-AE12-BC50CE370AF6}|Application\\Application.csproj|c:\\users\\agon-\\desktop\\dev\\healthcare-appointment-system\\backend\\application\\validators\\registerdtovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB698C15-0C49-4D5D-AE12-BC50CE370AF6}|Application\\Application.csproj|solutionrelative:application\\validators\\registerdtovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB698C15-0C49-4D5D-AE12-BC50CE370AF6}|Application\\Application.csproj|c:\\users\\agon-\\desktop\\dev\\healthcare-appointment-system\\backend\\application\\validators\\doctordtovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB698C15-0C49-4D5D-AE12-BC50CE370AF6}|Application\\Application.csproj|solutionrelative:application\\validators\\doctordtovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB698C15-0C49-4D5D-AE12-BC50CE370AF6}|Application\\Application.csproj|c:\\users\\agon-\\desktop\\dev\\healthcare-appointment-system\\backend\\application\\dtos\\patientdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB698C15-0C49-4D5D-AE12-BC50CE370AF6}|Application\\Application.csproj|solutionrelative:application\\dtos\\patientdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB698C15-0C49-4D5D-AE12-BC50CE370AF6}|Application\\Application.csproj|c:\\users\\agon-\\desktop\\dev\\healthcare-appointment-system\\backend\\application\\dtos\\doctordto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB698C15-0C49-4D5D-AE12-BC50CE370AF6}|Application\\Application.csproj|solutionrelative:application\\dtos\\doctordto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB698C15-0C49-4D5D-AE12-BC50CE370AF6}|Application\\Application.csproj|c:\\users\\agon-\\desktop\\dev\\healthcare-appointment-system\\backend\\application\\dtos\\bookappointmentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB698C15-0C49-4D5D-AE12-BC50CE370AF6}|Application\\Application.csproj|solutionrelative:application\\dtos\\bookappointmentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB698C15-0C49-4D5D-AE12-BC50CE370AF6}|Application\\Application.csproj|c:\\users\\agon-\\desktop\\dev\\healthcare-appointment-system\\backend\\application\\dtos\\identity\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB698C15-0C49-4D5D-AE12-BC50CE370AF6}|Application\\Application.csproj|solutionrelative:application\\dtos\\identity\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{561B534A-9911-4B75-9C79-6935D2616F75}|Infrastructure\\Infrastructure.csproj|c:\\users\\agon-\\desktop\\dev\\healthcare-appointment-system\\backend\\infrastructure\\repositories\\doctorrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{561B534A-9911-4B75-9C79-6935D2616F75}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repositories\\doctorrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7701593B-3F06-4E42-AD81-5E9D7D4C2445}|Domain\\Domain.csproj|c:\\users\\agon-\\desktop\\dev\\healthcare-appointment-system\\backend\\domain\\entities\\doctor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7701593B-3F06-4E42-AD81-5E9D7D4C2445}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\doctor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB698C15-0C49-4D5D-AE12-BC50CE370AF6}|Application\\Application.csproj|c:\\users\\agon-\\desktop\\dev\\healthcare-appointment-system\\backend\\application\\services\\doctorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB698C15-0C49-4D5D-AE12-BC50CE370AF6}|Application\\Application.csproj|solutionrelative:application\\services\\doctorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB698C15-0C49-4D5D-AE12-BC50CE370AF6}|Application\\Application.csproj|c:\\users\\agon-\\desktop\\dev\\healthcare-appointment-system\\backend\\application\\interfaces\\idoctorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB698C15-0C49-4D5D-AE12-BC50CE370AF6}|Application\\Application.csproj|solutionrelative:application\\interfaces\\idoctorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{561B534A-9911-4B75-9C79-6935D2616F75}|Infrastructure\\Infrastructure.csproj|c:\\users\\agon-\\desktop\\dev\\healthcare-appointment-system\\backend\\infrastructure\\repositories\\appointmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{561B534A-9911-4B75-9C79-6935D2616F75}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repositories\\appointmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB698C15-0C49-4D5D-AE12-BC50CE370AF6}|Application\\Application.csproj|c:\\users\\agon-\\desktop\\dev\\healthcare-appointment-system\\backend\\application\\interfaces\\iappointmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB698C15-0C49-4D5D-AE12-BC50CE370AF6}|Application\\Application.csproj|solutionrelative:application\\interfaces\\iappointmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7701593B-3F06-4E42-AD81-5E9D7D4C2445}|Domain\\Domain.csproj|c:\\users\\agon-\\desktop\\dev\\healthcare-appointment-system\\backend\\domain\\interfaces\\iappointmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7701593B-3F06-4E42-AD81-5E9D7D4C2445}|Domain\\Domain.csproj|solutionrelative:domain\\interfaces\\iappointmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,30 +122,368 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 20,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\agon-\\Desktop\\Dev\\healthcare-appointment-system\\backend\\Api\\Program.cs",
+              "RelativeDocumentMoniker": "Api\\Program.cs",
+              "ToolTip": "C:\\Users\\agon-\\Desktop\\Dev\\healthcare-appointment-system\\backend\\Api\\Program.cs",
+              "RelativeToolTip": "Api\\Program.cs",
+              "ViewState": "AQIAADEAAAAAAAAAAAAAAE0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-23T19:40:15.645Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ExceptionMiddleware.cs",
+              "DocumentMoniker": "C:\\Users\\agon-\\Desktop\\Dev\\healthcare-appointment-system\\backend\\Api\\Middleware\\ExceptionMiddleware.cs",
+              "RelativeDocumentMoniker": "Api\\Middleware\\ExceptionMiddleware.cs",
+              "ToolTip": "C:\\Users\\agon-\\Desktop\\Dev\\healthcare-appointment-system\\backend\\Api\\Middleware\\ExceptionMiddleware.cs",
+              "RelativeToolTip": "Api\\Middleware\\ExceptionMiddleware.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-23T19:43:22.013Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CustomApplicationException.cs",
+              "DocumentMoniker": "C:\\Users\\agon-\\Desktop\\Dev\\healthcare-appointment-system\\backend\\Domain\\Exceptions\\CustomApplicationException.cs",
+              "RelativeDocumentMoniker": "Domain\\Exceptions\\CustomApplicationException.cs",
+              "ToolTip": "C:\\Users\\agon-\\Desktop\\Dev\\healthcare-appointment-system\\backend\\Domain\\Exceptions\\CustomApplicationException.cs",
+              "RelativeToolTip": "Domain\\Exceptions\\CustomApplicationException.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwA8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-23T19:41:54.65Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ValidationException.cs",
+              "DocumentMoniker": "C:\\Users\\agon-\\Desktop\\Dev\\healthcare-appointment-system\\backend\\Domain\\Exceptions\\ValidationException.cs",
+              "RelativeDocumentMoniker": "Domain\\Exceptions\\ValidationException.cs",
+              "ToolTip": "C:\\Users\\agon-\\Desktop\\Dev\\healthcare-appointment-system\\backend\\Domain\\Exceptions\\ValidationException.cs",
+              "RelativeToolTip": "Domain\\Exceptions\\ValidationException.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-23T19:41:31.141Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "NotFoundException.cs",
+              "DocumentMoniker": "C:\\Users\\agon-\\Desktop\\Dev\\healthcare-appointment-system\\backend\\Domain\\Exceptions\\NotFoundException.cs",
+              "RelativeDocumentMoniker": "Domain\\Exceptions\\NotFoundException.cs",
+              "ToolTip": "C:\\Users\\agon-\\Desktop\\Dev\\healthcare-appointment-system\\backend\\Domain\\Exceptions\\NotFoundException.cs",
+              "RelativeToolTip": "Domain\\Exceptions\\NotFoundException.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-23T19:40:46.98Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "PatientDtoValidator.cs",
+              "DocumentMoniker": "C:\\Users\\agon-\\Desktop\\Dev\\healthcare-appointment-system\\backend\\Application\\Validators\\PatientDtoValidator.cs",
+              "RelativeDocumentMoniker": "Application\\Validators\\PatientDtoValidator.cs",
+              "ToolTip": "C:\\Users\\agon-\\Desktop\\Dev\\healthcare-appointment-system\\backend\\Application\\Validators\\PatientDtoValidator.cs",
+              "RelativeToolTip": "Application\\Validators\\PatientDtoValidator.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-23T19:35:30.675Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "BookAppointmentDtoValidator.cs",
+              "DocumentMoniker": "C:\\Users\\agon-\\Desktop\\Dev\\healthcare-appointment-system\\backend\\Application\\Validators\\BookAppointmentDtoValidator.cs",
+              "RelativeDocumentMoniker": "Application\\Validators\\BookAppointmentDtoValidator.cs",
+              "ToolTip": "C:\\Users\\agon-\\Desktop\\Dev\\healthcare-appointment-system\\backend\\Application\\Validators\\BookAppointmentDtoValidator.cs",
+              "RelativeToolTip": "Application\\Validators\\BookAppointmentDtoValidator.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-23T19:34:31.185Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "AppointmentDtoValidator.cs",
+              "DocumentMoniker": "C:\\Users\\agon-\\Desktop\\Dev\\healthcare-appointment-system\\backend\\Application\\Validators\\AppointmentDtoValidator.cs",
+              "RelativeDocumentMoniker": "Application\\Validators\\AppointmentDtoValidator.cs",
+              "ToolTip": "C:\\Users\\agon-\\Desktop\\Dev\\healthcare-appointment-system\\backend\\Application\\Validators\\AppointmentDtoValidator.cs",
+              "RelativeToolTip": "Application\\Validators\\AppointmentDtoValidator.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-23T19:33:42.725Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "RegisterDtoValidator.cs",
+              "DocumentMoniker": "C:\\Users\\agon-\\Desktop\\Dev\\healthcare-appointment-system\\backend\\Application\\Validators\\RegisterDtoValidator.cs",
+              "RelativeDocumentMoniker": "Application\\Validators\\RegisterDtoValidator.cs",
+              "ToolTip": "C:\\Users\\agon-\\Desktop\\Dev\\healthcare-appointment-system\\backend\\Application\\Validators\\RegisterDtoValidator.cs",
+              "RelativeToolTip": "Application\\Validators\\RegisterDtoValidator.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAiwB8AAABEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-23T19:32:08.492Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "PatientDto.cs",
+              "DocumentMoniker": "C:\\Users\\agon-\\Desktop\\Dev\\healthcare-appointment-system\\backend\\Application\\DTOs\\PatientDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\PatientDto.cs",
+              "ToolTip": "C:\\Users\\agon-\\Desktop\\Dev\\healthcare-appointment-system\\backend\\Application\\DTOs\\PatientDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\PatientDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-23T19:31:44.968Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "BookAppointmentDto.cs",
+              "DocumentMoniker": "C:\\Users\\agon-\\Desktop\\Dev\\healthcare-appointment-system\\backend\\Application\\DTOs\\BookAppointmentDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\BookAppointmentDto.cs",
+              "ToolTip": "C:\\Users\\agon-\\Desktop\\Dev\\healthcare-appointment-system\\backend\\Application\\DTOs\\BookAppointmentDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\BookAppointmentDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-23T19:31:40.902Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "RegisterDto.cs",
+              "DocumentMoniker": "C:\\Users\\agon-\\Desktop\\Dev\\healthcare-appointment-system\\backend\\Application\\DTOs\\Identity\\RegisterDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\Identity\\RegisterDto.cs",
+              "ToolTip": "C:\\Users\\agon-\\Desktop\\Dev\\healthcare-appointment-system\\backend\\Application\\DTOs\\Identity\\RegisterDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\Identity\\RegisterDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-23T19:31:11.95Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PatientsController.cs",
+              "DocumentMoniker": "C:\\Users\\agon-\\Desktop\\Dev\\healthcare-appointment-system\\backend\\Api\\Controllers\\PatientsController.cs",
+              "RelativeDocumentMoniker": "Api\\Controllers\\PatientsController.cs",
+              "ToolTip": "C:\\Users\\agon-\\Desktop\\Dev\\healthcare-appointment-system\\backend\\Api\\Controllers\\PatientsController.cs",
+              "RelativeToolTip": "Api\\Controllers\\PatientsController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAIEAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-23T19:30:53.14Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ApplicationServicesRegistration.cs",
+              "DocumentMoniker": "C:\\Users\\agon-\\Desktop\\Dev\\healthcare-appointment-system\\backend\\Application\\ApplicationServicesRegistration.cs",
+              "RelativeDocumentMoniker": "Application\\ApplicationServicesRegistration.cs",
+              "ToolTip": "C:\\Users\\agon-\\Desktop\\Dev\\healthcare-appointment-system\\backend\\Application\\ApplicationServicesRegistration.cs",
+              "RelativeToolTip": "Application\\ApplicationServicesRegistration.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAAACAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-23T19:27:03.072Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "DoctorDtoValidator.cs",
+              "DocumentMoniker": "C:\\Users\\agon-\\Desktop\\Dev\\healthcare-appointment-system\\backend\\Application\\Validators\\DoctorDtoValidator.cs",
+              "RelativeDocumentMoniker": "Application\\Validators\\DoctorDtoValidator.cs",
+              "ToolTip": "C:\\Users\\agon-\\Desktop\\Dev\\healthcare-appointment-system\\backend\\Application\\Validators\\DoctorDtoValidator.cs",
+              "RelativeToolTip": "Application\\Validators\\DoctorDtoValidator.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAABHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-23T19:26:24.858Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "DoctorRepository.cs",
+              "DocumentMoniker": "C:\\Users\\agon-\\Desktop\\Dev\\healthcare-appointment-system\\backend\\Infrastructure\\Repositories\\DoctorRepository.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\DoctorRepository.cs",
+              "ToolTip": "C:\\Users\\agon-\\Desktop\\Dev\\healthcare-appointment-system\\backend\\Infrastructure\\Repositories\\DoctorRepository.cs",
+              "RelativeToolTip": "Infrastructure\\Repositories\\DoctorRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-23T19:23:09.643Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Doctor.cs",
+              "DocumentMoniker": "C:\\Users\\agon-\\Desktop\\Dev\\healthcare-appointment-system\\backend\\Domain\\Entities\\Doctor.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\Doctor.cs",
+              "ToolTip": "C:\\Users\\agon-\\Desktop\\Dev\\healthcare-appointment-system\\backend\\Domain\\Entities\\Doctor.cs",
+              "RelativeToolTip": "Domain\\Entities\\Doctor.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-23T19:23:04.535Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "DoctorService.cs",
+              "DocumentMoniker": "C:\\Users\\agon-\\Desktop\\Dev\\healthcare-appointment-system\\backend\\Application\\Services\\DoctorService.cs",
+              "RelativeDocumentMoniker": "Application\\Services\\DoctorService.cs",
+              "ToolTip": "C:\\Users\\agon-\\Desktop\\Dev\\healthcare-appointment-system\\backend\\Application\\Services\\DoctorService.cs",
+              "RelativeToolTip": "Application\\Services\\DoctorService.cs",
+              "ViewState": "AQIAACsAAAAAAAAAAAAkwGAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-23T19:23:00.14Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "IDoctorService.cs",
+              "DocumentMoniker": "C:\\Users\\agon-\\Desktop\\Dev\\healthcare-appointment-system\\backend\\Application\\Interfaces\\IDoctorService.cs",
+              "RelativeDocumentMoniker": "Application\\Interfaces\\IDoctorService.cs",
+              "ToolTip": "C:\\Users\\agon-\\Desktop\\Dev\\healthcare-appointment-system\\backend\\Application\\Interfaces\\IDoctorService.cs",
+              "RelativeToolTip": "Application\\Interfaces\\IDoctorService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-23T19:22:55.681Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "DoctorDto.cs",
+              "DocumentMoniker": "C:\\Users\\agon-\\Desktop\\Dev\\healthcare-appointment-system\\backend\\Application\\DTOs\\DoctorDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\DoctorDto.cs",
+              "ToolTip": "C:\\Users\\agon-\\Desktop\\Dev\\healthcare-appointment-system\\backend\\Application\\DTOs\\DoctorDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\DoctorDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwBMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-23T19:22:50.216Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "DoctorsController.cs",
+              "DocumentMoniker": "C:\\Users\\agon-\\Desktop\\Dev\\healthcare-appointment-system\\backend\\Api\\Controllers\\DoctorsController.cs",
+              "RelativeDocumentMoniker": "Api\\Controllers\\DoctorsController.cs",
+              "ToolTip": "C:\\Users\\agon-\\Desktop\\Dev\\healthcare-appointment-system\\backend\\Api\\Controllers\\DoctorsController.cs",
+              "RelativeToolTip": "Api\\Controllers\\DoctorsController.cs",
+              "ViewState": "AQIAAB8AAAAAAAAAAAAuwDsAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-23T19:22:43.533Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AppointmentDto.cs",
+              "DocumentMoniker": "C:\\Users\\agon-\\Desktop\\Dev\\healthcare-appointment-system\\backend\\Application\\DTOs\\AppointmentDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\AppointmentDto.cs",
+              "ToolTip": "C:\\Users\\agon-\\Desktop\\Dev\\healthcare-appointment-system\\backend\\Application\\DTOs\\AppointmentDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\AppointmentDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-23T19:20:53.107Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AppointmentService.cs",
+              "DocumentMoniker": "C:\\Users\\agon-\\Desktop\\Dev\\healthcare-appointment-system\\backend\\Application\\Services\\AppointmentService.cs",
+              "RelativeDocumentMoniker": "Application\\Services\\AppointmentService.cs",
+              "ToolTip": "C:\\Users\\agon-\\Desktop\\Dev\\healthcare-appointment-system\\backend\\Application\\Services\\AppointmentService.cs",
+              "RelativeToolTip": "Application\\Services\\AppointmentService.cs",
+              "ViewState": "AQIAACEAAAAAAAAAAAAYwDcAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-23T19:05:59.163Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "IAppointmentService.cs",
+              "DocumentMoniker": "C:\\Users\\agon-\\Desktop\\Dev\\healthcare-appointment-system\\backend\\Application\\Interfaces\\IAppointmentService.cs",
+              "RelativeDocumentMoniker": "Application\\Interfaces\\IAppointmentService.cs",
+              "ToolTip": "C:\\Users\\agon-\\Desktop\\Dev\\healthcare-appointment-system\\backend\\Application\\Interfaces\\IAppointmentService.cs",
+              "RelativeToolTip": "Application\\Interfaces\\IAppointmentService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-23T19:05:49.337Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "AppointmentRepository.cs",
+              "DocumentMoniker": "C:\\Users\\agon-\\Desktop\\Dev\\healthcare-appointment-system\\backend\\Infrastructure\\Repositories\\AppointmentRepository.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\AppointmentRepository.cs",
+              "ToolTip": "C:\\Users\\agon-\\Desktop\\Dev\\healthcare-appointment-system\\backend\\Infrastructure\\Repositories\\AppointmentRepository.cs",
+              "RelativeToolTip": "Infrastructure\\Repositories\\AppointmentRepository.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAACUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-23T19:05:04.222Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "IAppointmentRepository.cs",
+              "DocumentMoniker": "C:\\Users\\agon-\\Desktop\\Dev\\healthcare-appointment-system\\backend\\Domain\\Interfaces\\IAppointmentRepository.cs",
+              "RelativeDocumentMoniker": "Domain\\Interfaces\\IAppointmentRepository.cs",
+              "ToolTip": "C:\\Users\\agon-\\Desktop\\Dev\\healthcare-appointment-system\\backend\\Domain\\Interfaces\\IAppointmentRepository.cs",
+              "RelativeToolTip": "Domain\\Interfaces\\IAppointmentRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-23T19:04:15.691Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "AppointmentsController.cs",
               "DocumentMoniker": "C:\\Users\\agon-\\Desktop\\Dev\\healthcare-appointment-system\\backend\\Api\\Controllers\\AppointmentsController.cs",
               "RelativeDocumentMoniker": "Api\\Controllers\\AppointmentsController.cs",
               "ToolTip": "C:\\Users\\agon-\\Desktop\\Dev\\healthcare-appointment-system\\backend\\Api\\Controllers\\AppointmentsController.cs",
               "RelativeToolTip": "Api\\Controllers\\AppointmentsController.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAwC8AAAAyAAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAC4AAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-23T16:34:48.732Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 10,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Users\\agon-\\Desktop\\Dev\\healthcare-appointment-system\\backend\\Api\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "Api\\Controllers\\AuthController.cs",
               "ToolTip": "C:\\Users\\agon-\\Desktop\\Dev\\healthcare-appointment-system\\backend\\Api\\Controllers\\AuthController.cs",
               "RelativeToolTip": "Api\\Controllers\\AuthController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAABQAAAAAAAAAAAAAwDkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-23T16:34:45.444Z",
               "EditorCaption": ""

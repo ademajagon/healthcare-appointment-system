@@ -14,6 +14,17 @@ import { TrashIcon, CalendarIcon } from "@radix-ui/react-icons";
 import { Button } from "./ui/button";
 import { useUserStore } from "@/stores/useUserStore";
 import { useAuth } from "@/context/AuthContext";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
 
 const fetcher = (url: string, token: string) =>
   axios
@@ -28,9 +39,12 @@ export function Appointments() {
   const user = useUserStore((state) => state.user);
   const { token } = useAuth();
 
-  const { data, error } = useSWR(
+  const { data, error, mutate } = useSWR(
     user && token
-      ? [`https://localhost:7094/api/Appointments/patient/${user.id}`, token]
+      ? [
+          `${process.env.NEXT_PUBLIC_API_URL}/api/Appointments/patient/${user.id}`,
+          token,
+        ]
       : null,
     ([url, token]) => fetcher(url, token)
   );
@@ -43,11 +57,21 @@ export function Appointments() {
   if (!data) return <div>Loading...</div>;
 
   const handleUnbook = async (id: number) => {
-    console.log(id);
+    try {
+      await axios.delete(
+        `${process.env.NEXT_PUBLIC_API_URL}/api/Appointments/${id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      mutate();
+    } catch (error) {}
   };
 
   return (
-    <div>
+    <div className="space-y-4">
       {data.map((appointment: any) => (
         <Card key={appointment.id}>
           <CardHeader className="grid grid-cols-[1fr_110px] items-start gap-4 space-y-0">
@@ -59,14 +83,33 @@ export function Appointments() {
               <CardDescription>{appointment.notes}</CardDescription>
             </div>
             <div className="flex items-center space-x-1 rounded-md bg-secondary text-secondary-foreground">
-              <Button
-                variant="secondary"
-                className="shadow-none"
-                onClick={() => handleUnbook(appointment.id)}
-              >
-                <TrashIcon className="mr-2 h-4 w-4" />
-                Unbook
-              </Button>
+              <AlertDialog>
+                <AlertDialogTrigger asChild>
+                  <Button variant="secondary" className="shadow-none">
+                    <TrashIcon className="mr-2 h-4 w-4" />
+                    Unbook
+                  </Button>
+                </AlertDialogTrigger>
+                <AlertDialogContent>
+                  <AlertDialogHeader>
+                    <AlertDialogTitle>
+                      Are you absolutely sure?
+                    </AlertDialogTitle>
+                    <AlertDialogDescription>
+                      This action cannot be undone. This will permanently delete
+                      your account and remove your data from our servers.
+                    </AlertDialogDescription>
+                  </AlertDialogHeader>
+                  <AlertDialogFooter>
+                    <AlertDialogCancel>Cancel</AlertDialogCancel>
+                    <AlertDialogAction
+                      onClick={() => handleUnbook(appointment.id)}
+                    >
+                      Continue
+                    </AlertDialogAction>
+                  </AlertDialogFooter>
+                </AlertDialogContent>
+              </AlertDialog>
             </div>
           </CardHeader>
           <CardContent>

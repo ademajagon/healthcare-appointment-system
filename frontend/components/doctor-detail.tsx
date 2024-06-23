@@ -1,4 +1,3 @@
-// components/doctor-detail.tsx
 "use client";
 
 import { useParams } from "next/navigation";
@@ -17,16 +16,10 @@ export function DoctorDetail() {
     data: doctor,
     error,
     isLoading,
-  } = useSWR(`https://localhost:7094/api/Doctors/${id}`, fetcher);
+  } = useSWR(`${process.env.NEXT_PUBLIC_API_URL}/api/Doctors/${id}`, fetcher);
 
   if (error) return <div>Failed to load</div>;
   if (isLoading) return <div>Loading...</div>;
-
-  const handleAppointmentCreated = (appointment: any) => {
-    console.log("Appointment created:", appointment);
-  };
-
-  console.log(doctor, "DOCTORRRR");
 
   const additionalInfo = `
     Dr. ${doctor.firstName} ${doctor.lastName} has over 20 years of experience in the medical field. 
@@ -35,7 +28,7 @@ export function DoctorDetail() {
     In their free time, they enjoy hiking, reading, and volunteering at local community health clinics.`;
 
   return (
-    <Card className="max-w-2xl mx-auto p-4">
+    <Card className="max-w-2xl mx-auto">
       <CardHeader className="flex items-center">
         <Avatar className="w-32 h-32">
           <AvatarImage
@@ -55,26 +48,27 @@ export function DoctorDetail() {
           <Badge>{doctor.specialization}</Badge>
         </div>
       </CardHeader>
-      <CardContent className="space-y-4">
-        <div>
-          <h2 className="text-xl font-semibold">Biography</h2>
-          <p>{doctor.biography}</p>
-        </div>
-        <div>
-          <h2 className="text-xl font-semibold">Availability</h2>
-          <p>{doctor.isAvailable ? "Yes" : "No"}</p>
-        </div>
-        <div>
-          <h2 className="text-xl font-semibold">Additional Info</h2>
-          <p>{additionalInfo}</p>
+      <CardContent className="space-y-12">
+        <div className="space-y-4">
+          <div>
+            <h2 className="font-semibold">Biography</h2>
+            <p className="text-sm">{doctor.biography}</p>
+          </div>
+          <div>
+            <h2 className="font-semibold">Availability</h2>
+            <p className="text-sm">{doctor.isAvailable ? "Yes" : "No"}</p>
+          </div>
+          <div>
+            <h2 className="font-semibold">Additional Info</h2>
+            <p className="text-sm">{additionalInfo}</p>
+          </div>
         </div>
 
         <div>
-          <h2 className="text-xl font-semibold">Book an Appointment</h2>
+          <h2 className="font-semibold">Book an Appointment</h2>
           <AppointmentForm
             doctorId={doctor.id}
             doctorName={`${doctor.firstName} ${doctor.lastName}`}
-            onAppointmentCreated={handleAppointmentCreated}
           />
         </div>
       </CardContent>

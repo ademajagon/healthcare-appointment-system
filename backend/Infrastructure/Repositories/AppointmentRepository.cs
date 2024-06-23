@@ -26,6 +26,16 @@ namespace Infrastructure.Repositories
             return appointment;
         }
 
+        public async Task DeleteAsync(int id)
+        {
+            var appointment = await _dbContext.Appointments.FindAsync(id);
+            if (appointment != null)
+            {
+                _dbContext.Appointments.Remove(appointment);
+                await _dbContext.SaveChangesAsync();
+            }
+        }
+
         public async Task<Appointment> GetByIdAsync(int id)
         {
             return await _dbContext.Appointments

@@ -1,5 +1,6 @@
 ﻿using Application.DTOs;
 using Application.Interfaces;
+using Domain.Exceptions;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers
@@ -28,7 +29,7 @@ namespace Api.Controllers
             var doctor = await _doctorService.GetDoctorByIdAsync(id);
             if (doctor == null)
             {
-                return NotFound();
+                throw new NotFoundException("Doctor not found.");
             }
 
             return Ok(doctor);
@@ -46,7 +47,10 @@ namespace Api.Controllers
         {
             if (id != doctorDto.Id)
             {
-                return BadRequest();
+                throw new ValidationException(new Dictionary<string, string[]>
+                {
+                    { "Id", new[] { "Doctor ID mismatch." } }
+                });
             }
 
             await _doctorService.UpdateDoctorAsync(doctorDto);

@@ -9,6 +9,7 @@ import {
 } from "react";
 import { useRouter } from "next/navigation";
 import { useUserStore } from "@/stores/useUserStore";
+import { useToast } from "@/components/ui/use-toast";
 
 interface AuthContextProps {
   isAuthenticated: boolean;
@@ -26,6 +27,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const router = useRouter();
   const setUser = useUserStore((state) => state.setUser);
   const clearUser = useUserStore((state) => state.clearUser);
+  const { toast } = useToast();
 
   useEffect(() => {
     const storedToken = localStorage.getItem("jwtToken");
@@ -60,7 +62,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
   const login = async (email: string, password: string) => {
     try {
-      const response = await fetch(`https://localhost:7094/login`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -83,9 +85,18 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       setIsAuthenticated(true);
 
       await fetchUserData(accessToken);
+
+      toast({
+        title: "Success",
+        description: "Welcome back!",
+      });
+
       router.push("/dashboard");
     } catch (error) {
-      console.error("Failed to login:", error);
+      toast({
+        title: "Error",
+        description: "Failed to log in. Please try again.",
+      });
     }
   };
 

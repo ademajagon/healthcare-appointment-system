@@ -50,6 +50,11 @@ namespace Application.Services
             };
         }
 
+        public async Task DeleteAppointmentAsync(int id)
+        {
+            await _appointmentRepository.DeleteAsync(id);
+        }
+
         public async Task<AppointmentDto> GetAppointmentByIdAsync(int id)
         {
             var appointment = await _appointmentRepository.GetByIdAsync(id);

@@ -1,4 +1,3 @@
-// components/appointment-form.tsx
 "use client";
 
 import axios from "axios";
@@ -7,7 +6,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import {
   Form,
@@ -15,7 +13,6 @@ import {
   FormItem,
   FormLabel,
   FormControl,
-  FormDescription,
   FormMessage,
 } from "@/components/ui/form";
 import { Calendar } from "@/components/ui/calendar";
@@ -27,17 +24,23 @@ import {
 import { Calendar as CalendarIcon } from "lucide-react";
 import { format } from "date-fns";
 import { cn } from "@/lib/utils";
-import { mutate } from "swr";
 import { useToast } from "@/components/ui/use-toast";
 import { useRouter } from "next/navigation";
 import { ToastAction } from "@/components/ui/toast";
+import { useUserStore } from "@/stores/useUserStore";
 
 const appointmentSchema = z.object({
-  patientId: z.string().nonempty("Patient ID is required"),
-  // doctortId: z.string().nonempty("Doctor ID is required"),
-  appointmentDate: z.string().nonempty("Appointment date is required"),
-  appointmentTime: z.string().nonempty("Appointment time is required"),
-  notes: z.string().optional(),
+  appointmentDate: z.string().refine(
+    (val) => {
+      const date = new Date(val);
+      return date > new Date();
+    },
+    {
+      message: "You cannot book appointments in the past.",
+    }
+  ),
+  appointmentTime: z.string().min(1, "Appointment time is required"),
+  notes: z.string().max(500, "Notes must not exceed 500 characters").optional(),
 });
 
 type AppointmentSchema = z.infer<typeof appointmentSchema>;
@@ -45,14 +48,11 @@ type AppointmentSchema = z.infer<typeof appointmentSchema>;
 interface AppointmentFormProps {
   doctorId: number;
   doctorName: string;
-  onAppointmentCreated: (appointment: AppointmentSchema) => void;
 }
 
 export const createAppointment = async (appointment: any) => {
-  console.log(appointment, "appointment on create");
-
   const response = await axios.post(
-    "https://localhost:7094/api/Appointments",
+    `${process.env.NEXT_PUBLIC_API_URL}/api/Appointments`,
     appointment,
     {
       headers: {
@@ -67,15 +67,14 @@ export const createAppointment = async (appointment: any) => {
 export default function AppointmentForm({
   doctorId,
   doctorName,
-  onAppointmentCreated,
 }: AppointmentFormProps) {
   const router = useRouter();
   const { toast } = useToast();
+  const { user } = useUserStore();
 
   const form = useForm<AppointmentSchema>({
     resolver: zodResolver(appointmentSchema),
     defaultValues: {
-      patientId: "",
       appointmentDate: "",
       appointmentTime: "",
       notes: "",
@@ -89,6 +88,7 @@ export default function AppointmentForm({
 
     const appointment = {
       ...data,
+      patientId: user && user.id,
       doctorId,
       appointmentDate: appointmentDate.toISOString(),
       appointmentTime: appointmentDate.toISOString(),
@@ -104,7 +104,6 @@ export default function AppointmentForm({
         )}.`,
         action: <ToastAction altText="Goto schedule to undo">Undo</ToastAction>,
       });
-      onAppointmentCreated(result);
       router.push("/dashboard/appointments");
     } catch (error) {
       toast({
@@ -112,26 +111,12 @@ export default function AppointmentForm({
         description: "Failed to create appointment. Please try again.",
         action: <ToastAction altText="Goto schedule to undo">Undo</ToastAction>,
       });
-      console.error("Failed to create appointment", error);
     }
   };
 
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-        <FormField
-          control={form.control}
-          name="patientId"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Patient ID</FormLabel>
-              <FormControl>
-                <Input {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
         <FormField
           control={form.control}
           name="appointmentDate"

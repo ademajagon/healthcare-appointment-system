@@ -14,6 +14,7 @@ using System.Text;
 using Application;
 using Domain;
 using Infrastructure;
+using Api.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -70,6 +71,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.MapIdentityApi<ApplicationUser>();
+
+app.UseMiddleware<ExceptionMiddleware>();
 
 app.UseHttpsRedirection();
 

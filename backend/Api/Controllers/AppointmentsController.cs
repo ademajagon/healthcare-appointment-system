@@ -1,5 +1,6 @@
 ﻿using Application.DTOs;
 using Application.Interfaces;
+using Domain.Exceptions;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -27,7 +28,7 @@ namespace Api.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                throw new CustomApplicationException($"An error occurred while booking the appointment: {ex.Message}");
             }
         }
 
@@ -37,11 +38,17 @@ namespace Api.Controllers
             try
             {
                 var appointment = await _appointmentService.GetAppointmentByIdAsync(id);
+
+                if (appointment == null)
+                {
+                    throw new NotFoundException("Appointment not found.");
+                }
+
                 return Ok(appointment);
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                throw new CustomApplicationException($"An error occurred while retrieving the appointment: {ex.Message}");
             }
         }
 
@@ -55,12 +62,22 @@ namespace Api.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                throw new CustomApplicationException($"An error occurred while retrieving appointments for patient {patientId}: {ex.Message}");
             }
         }
 
-        // GetAllAppointments
-        // UpdateAppointment
-        // DeleteAppointment
+        [HttpDelete("{id}"), Authorize]
+        public async Task<IActionResult> DeleteAppointment(int id)
+        {
+            try
+            {
+                await _appointmentService.DeleteAppointmentAsync(id);
+                return NoContent();
+            }
+            catch (Exception ex)
+            {
+                throw new CustomApplicationException($"An error occurred while deleting the appointment: {ex.Message}");
+            }
+        }
     }
 }

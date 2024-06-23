@@ -12,5 +12,6 @@ namespace Application.Interfaces
         Task<BookAppointmentDto> BookAppointmentAsync(BookAppointmentDto appointmentDto);
         Task<AppointmentDto> GetAppointmentByIdAsync(int id);
         Task<IEnumerable<AppointmentDto>> GetAppointmentsByPatientIdAsync(int patientId);
+        Task DeleteAppointmentAsync(int id);
     }
 }

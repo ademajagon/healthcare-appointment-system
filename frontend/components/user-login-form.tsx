@@ -1,27 +1,21 @@
 "use client";
 
-import * as React from "react";
-
+import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { Icons } from "./ui/icons";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 import { useAuth } from "@/context/AuthContext";
-import { useToast } from "./ui/use-toast";
-import { useUserStore } from "@/stores/useUserStore";
 
 interface UserAuthLoginProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 export function UserLoginForm({ className, ...props }: UserAuthLoginProps) {
-  const [isLoading, setIsLoading] = React.useState<boolean>(false);
-  const [email, setEmail] = React.useState<string>("");
-  const [password, setPassword] = React.useState<string>("");
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
 
   const { login } = useAuth();
-
-  const { toast } = useToast();
-  const user = useUserStore((state) => state.user);
 
   async function onSubmit(event: React.SyntheticEvent) {
     event.preventDefault();
@@ -29,7 +23,7 @@ export function UserLoginForm({ className, ...props }: UserAuthLoginProps) {
     try {
       await login(email, password);
     } catch (error) {
-      console.error("Failed to login:", error);
+      console.error("Failed to log in:", error);
     }
     setIsLoading(false);
   }
@@ -75,7 +69,7 @@ export function UserLoginForm({ className, ...props }: UserAuthLoginProps) {
             {isLoading && (
               <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
             )}
-            Sign In with Email
+            Log In
           </Button>
         </div>
       </form>
@@ -89,7 +83,7 @@ export function UserLoginForm({ className, ...props }: UserAuthLoginProps) {
           </span>
         </div>
       </div>
-      <Button variant="outline" type="button" disabled={isLoading}>
+      <Button variant="outline" type="button" disabled>
         {isLoading ? (
           <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
         ) : (

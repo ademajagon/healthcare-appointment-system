@@ -16,7 +16,7 @@ interface Doctor {
 
 export const useDoctors = () => {
   const { data, error } = useSWR<Doctor[]>(
-    "https://localhost:7094/api/Doctors",
+    `${process.env.NEXT_PUBLIC_API_URL}/api/Doctors`,
     fetcher
   );
   return {

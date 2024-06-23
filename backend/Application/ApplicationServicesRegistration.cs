@@ -1,6 +1,9 @@
 ﻿using Application.Interfaces;
 using Application.Services;
+using Application.Validators;
 using Domain.Interfaces;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using Infrastructure.Repositories;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -19,6 +22,9 @@ namespace Application
             services.AddScoped<IPatientService, PatientService>();
             services.AddScoped<IAppointmentService, AppointmentService>();
             services.AddScoped<IAuthService, AuthService>();
+
+            services.AddControllers()
+                    .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<DoctorDtoValidator>());
 
             return services;
         }
