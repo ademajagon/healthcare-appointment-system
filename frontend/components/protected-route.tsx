@@ -12,7 +12,7 @@ const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
     const checkAuth = () => {
       if (!isAuthenticated && !token) {
-        router.push("/login");
+        router.push("/");
       } else {
         setLoading(false);
       }

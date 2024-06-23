@@ -11,8 +11,8 @@ export const withAuth = (WrappedComponent: React.ComponentType) => {
     const pathname = usePathname();
 
     useEffect(() => {
-      if (!isAuthenticated && pathname !== "/login") {
-        window.location.href = "/login";
+      if (!isAuthenticated && pathname !== "/") {
+        window.location.href = "/";
       }
     }, [isAuthenticated, pathname]);
 

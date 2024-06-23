@@ -99,7 +99,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
         description: "You have been registered successfully. Please log in.",
       });
 
-      router.push("/login");
+      router.push("/");
     } catch (error) {
       toast({
         title: "Registration Failed",

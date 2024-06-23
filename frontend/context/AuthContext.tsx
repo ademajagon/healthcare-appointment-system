@@ -105,7 +105,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     setToken(null);
     setIsAuthenticated(false);
     clearUser();
-    router.push("/login");
+    router.push("/");
   };
 
   return (
