@@ -18,6 +18,10 @@ namespace Api.Controllers
             _patientService = patientService ?? throw new ArgumentNullException(nameof(patientService));
         }
 
+        /// <summary>
+        /// Retrieves all patients.
+        /// </summary>
+        /// <returns>A list of patients.</returns>
         [HttpGet, Authorize]
         public async Task<ActionResult<IEnumerable<PatientDto>>> GetAllPatients()
         {
@@ -32,6 +36,11 @@ namespace Api.Controllers
             }
         }
 
+        /// <summary>
+        /// Retrieves a patient by ID.
+        /// </summary>
+        /// <param name="id">The patient ID.</param>
+        /// <returns>A patient.</returns>
         [HttpGet("{id}")]
         public async Task<ActionResult<PatientDto>> GetPatientById(int id)
         {
@@ -51,6 +60,11 @@ namespace Api.Controllers
             }
         }
 
+        /// <summary>
+        /// Adds a new patient.
+        /// </summary>
+        /// <param name="patientDto">The patient details.</param>
+        /// <returns>The created patient.</returns>
         [HttpPost]
         public async Task<ActionResult<PatientDto>> AddPatients([FromBody] PatientDto patientDto)
         {
@@ -69,6 +83,12 @@ namespace Api.Controllers
             }
         }
 
+        /// <summary>
+        /// Updates an existing patient.
+        /// </summary>
+        /// <param name="id">The patient ID.</param>
+        /// <param name="patientDto">The updated patient details.</param>
+        /// <returns>No content.</returns>
         [HttpPut("{id}")]
         public async Task<ActionResult<PatientDto>> UpdatePatient(int id, [FromBody] PatientDto patientDto)
         {
@@ -95,6 +115,11 @@ namespace Api.Controllers
             }
         }
 
+        /// <summary>
+        /// Deletes a patient by ID.
+        /// </summary>
+        /// <param name="id">The patient ID.</param>
+        /// <returns>No content.</returns>
         [HttpDelete("{id}")]
         public async Task<ActionResult<PatientDto>> DeletePatient(int id)
         {
@@ -109,6 +134,10 @@ namespace Api.Controllers
             }
         }
 
+        /// <summary>
+        /// Retrieves the authenticated patient's details.
+        /// </summary>
+        /// <returns>The patient's details.</returns>
         [HttpGet("me"), Authorize]
         public async Task<ActionResult<PatientDto>> GetMyDetails()
         {

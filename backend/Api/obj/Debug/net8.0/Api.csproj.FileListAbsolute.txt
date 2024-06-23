@@ -7,7 +7,11 @@ C:\Users\agon-\Desktop\Dev\healthcare-appointment-system\backend\Api\bin\Debug\n
 C:\Users\agon-\Desktop\Dev\healthcare-appointment-system\backend\Api\bin\Debug\net8.0\Api.pdb
 C:\Users\agon-\Desktop\Dev\healthcare-appointment-system\backend\Api\bin\Debug\net8.0\Azure.Core.dll
 C:\Users\agon-\Desktop\Dev\healthcare-appointment-system\backend\Api\bin\Debug\net8.0\Azure.Identity.dll
+C:\Users\agon-\Desktop\Dev\healthcare-appointment-system\backend\Api\bin\Debug\net8.0\FluentValidation.dll
+C:\Users\agon-\Desktop\Dev\healthcare-appointment-system\backend\Api\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
+C:\Users\agon-\Desktop\Dev\healthcare-appointment-system\backend\Api\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
 C:\Users\agon-\Desktop\Dev\healthcare-appointment-system\backend\Api\bin\Debug\net8.0\Humanizer.dll
+C:\Users\agon-\Desktop\Dev\healthcare-appointment-system\backend\Api\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\agon-\Desktop\Dev\healthcare-appointment-system\backend\Api\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
 C:\Users\agon-\Desktop\Dev\healthcare-appointment-system\backend\Api\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 C:\Users\agon-\Desktop\Dev\healthcare-appointment-system\backend\Api\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
@@ -38,6 +42,7 @@ C:\Users\agon-\Desktop\Dev\healthcare-appointment-system\backend\Api\bin\Debug\n
 C:\Users\agon-\Desktop\Dev\healthcare-appointment-system\backend\Api\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
 C:\Users\agon-\Desktop\Dev\healthcare-appointment-system\backend\Api\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\agon-\Desktop\Dev\healthcare-appointment-system\backend\Api\bin\Debug\net8.0\Mono.TextTemplating.dll
+C:\Users\agon-\Desktop\Dev\healthcare-appointment-system\backend\Api\bin\Debug\net8.0\Newtonsoft.Json.dll
 C:\Users\agon-\Desktop\Dev\healthcare-appointment-system\backend\Api\bin\Debug\net8.0\Scrutor.dll
 C:\Users\agon-\Desktop\Dev\healthcare-appointment-system\backend\Api\bin\Debug\net8.0\Swashbuckle.AspNetCore.Filters.dll
 C:\Users\agon-\Desktop\Dev\healthcare-appointment-system\backend\Api\bin\Debug\net8.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll
@@ -150,8 +155,5 @@ C:\Users\agon-\Desktop\Dev\healthcare-appointment-system\backend\Api\obj\Debug\n
 C:\Users\agon-\Desktop\Dev\healthcare-appointment-system\backend\Api\obj\Debug\net8.0\Api.pdb
 C:\Users\agon-\Desktop\Dev\healthcare-appointment-system\backend\Api\obj\Debug\net8.0\Api.genruntimeconfig.cache
 C:\Users\agon-\Desktop\Dev\healthcare-appointment-system\backend\Api\obj\Debug\net8.0\ref\Api.dll
-C:\Users\agon-\Desktop\Dev\healthcare-appointment-system\backend\Api\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
-C:\Users\agon-\Desktop\Dev\healthcare-appointment-system\backend\Api\bin\Debug\net8.0\FluentValidation.dll
-C:\Users\agon-\Desktop\Dev\healthcare-appointment-system\backend\Api\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
-C:\Users\agon-\Desktop\Dev\healthcare-appointment-system\backend\Api\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
-C:\Users\agon-\Desktop\Dev\healthcare-appointment-system\backend\Api\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\agon-\Desktop\Dev\healthcare-appointment-system\backend\Api\bin\Debug\net8.0\Api.xml
+C:\Users\agon-\Desktop\Dev\healthcare-appointment-system\backend\Api\obj\Debug\net8.0\Api.xml

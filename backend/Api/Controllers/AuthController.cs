@@ -17,6 +17,13 @@ namespace Api.Controllers
             _authService = authService;
         }
 
+        /// <summary>
+        /// Registers a new user.
+        /// </summary>
+        /// <param name="model">The registration details.</param>
+        /// <returns>Confirmation message on successful registration.</returns>
+        /// <response code="200">If the user is registered successfully.</response>
+        /// <response code="400">If the registration details are invalid.</response>
         [HttpPost("register")]
         public async Task<ActionResult> Register([FromBody] RegisterDto model)
         {
