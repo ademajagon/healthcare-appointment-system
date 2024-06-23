@@ -195,9 +195,9 @@ namespace Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "8a880be1-0f45-4feb-bc57-230828565c30",
+                            Id = "eeabe41e-90cd-43e0-967a-75104a03fea9",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "e51213ee-07b8-42fa-a5e5-e8c36c7afa7c",
+                            ConcurrencyStamp = "f8f6d8b1-909b-457b-97b9-85d7518e4ab9",
                             DateOfBirth = new DateTime(1990, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "patient@example.com",
                             EmailConfirmed = true,
@@ -207,17 +207,17 @@ namespace Infrastructure.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "PATIENT@EXAMPLE.COM",
                             NormalizedUserName = "PATIENT@EXAMPLE.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEFmjyl2VOWi6foWKhv3jWdEnLEvkaQ4ig5/Ak1Av+ZcCtT4NXz0ru7QOqsOJ4eX9qQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEH7eoB11wP3D7KK0lfVD1z5afScgHDWD8QSQnK63E/69Fg5kCcHfzCcIbmpjmOkFvQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "2cd07854-5f7b-4b78-a570-7b28efb955d4",
+                            SecurityStamp = "71bbfcee-7c74-4d1e-abd2-3ada3b620c10",
                             TwoFactorEnabled = false,
                             UserName = "patient@example.com"
                         },
                         new
                         {
-                            Id = "7cd7f373-59d4-4a1b-9c68-9727d10eb0dc",
+                            Id = "a885dfe4-fa78-40e9-a240-be17a0cf5228",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "53ce2a28-7eab-4a9f-af62-9cb437b50c11",
+                            ConcurrencyStamp = "882c6ca2-676c-4452-a7f7-1a46b94628c0",
                             DateOfBirth = new DateTime(1980, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "doctor@example.com",
                             EmailConfirmed = true,
@@ -227,11 +227,31 @@ namespace Infrastructure.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "DOCTOR@EXAMPLE.COM",
                             NormalizedUserName = "DOCTOR@EXAMPLE.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEDn1us7s8LeNMywPZBMh+fwfDIMrHbzcNYhfwXifakRWANrrv2oTITXjPCaw6h1K3Q==",
+                            PasswordHash = "AQAAAAIAAYagAAAAENTV+Fg5UPasXTyy57GCe1PVYKphjpqyY20JwGKO0KJQgF1G+rFSYhEXjLMl0Vv4tQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "ef32f57f-f0fa-4223-bbfb-f69c230850eb",
+                            SecurityStamp = "c4df6943-6912-4704-8c1a-ae682ee7d190",
                             TwoFactorEnabled = false,
                             UserName = "doctor@example.com"
+                        },
+                        new
+                        {
+                            Id = "37bd5b2e-b6b4-4f9f-a603-dbc8af457044",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "72c4f6ce-13e3-4079-a2d7-217b4567a930",
+                            DateOfBirth = new DateTime(1995, 3, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "patient2@example.com",
+                            EmailConfirmed = true,
+                            FirstName = "SecondPatientFirstName",
+                            Gender = "Male",
+                            LastName = "SecondPatientLastName",
+                            LockoutEnabled = false,
+                            NormalizedEmail = "PATIENT2@EXAMPLE.COM",
+                            NormalizedUserName = "PATIENT2@EXAMPLE.COM",
+                            PasswordHash = "AQAAAAIAAYagAAAAELiB+n68egbxFt9OgW99K97snk2lFbnhC6O7kZStDSABfGVRVb97/0R04ycLfrb+uw==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "31ffe7d8-8818-4214-92c8-bd1872aac0ad",
+                            TwoFactorEnabled = false,
+                            UserName = "patient2@example.com"
                         });
                 });
 
@@ -270,6 +290,10 @@ namespace Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.ToTable("Patients");
@@ -284,7 +308,20 @@ namespace Infrastructure.Migrations
                             FirstName = "Jane",
                             Gender = "Female",
                             LastName = "Smith",
-                            PhoneNumber = "987-654-3210"
+                            PhoneNumber = "987-654-3210",
+                            UserId = "eeabe41e-90cd-43e0-967a-75104a03fea9"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Address = "789 Pine St",
+                            DateOfBirth = new DateTime(1995, 3, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "patient2@example.com",
+                            FirstName = "SecondPatientFirstName",
+                            Gender = "Male",
+                            LastName = "SecondPatientLastName",
+                            PhoneNumber = "123-123-1234",
+                            UserId = "37bd5b2e-b6b4-4f9f-a603-dbc8af457044"
                         });
                 });
 
@@ -317,13 +354,13 @@ namespace Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "65c616c0-3b3b-4e15-b82f-841466a57e27",
+                            Id = "9bd13248-ce3f-4517-9f8d-d7fd9a71f092",
                             Name = "Patient",
                             NormalizedName = "PATIENT"
                         },
                         new
                         {
-                            Id = "86db2112-5804-44ae-8013-9bb59e2d731f",
+                            Id = "dec461cd-94e2-4f6a-b28e-f4e0c959b136",
                             Name = "Doctor",
                             NormalizedName = "DOCTOR"
                         });
@@ -418,13 +455,18 @@ namespace Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "8a880be1-0f45-4feb-bc57-230828565c30",
-                            RoleId = "65c616c0-3b3b-4e15-b82f-841466a57e27"
+                            UserId = "eeabe41e-90cd-43e0-967a-75104a03fea9",
+                            RoleId = "9bd13248-ce3f-4517-9f8d-d7fd9a71f092"
                         },
                         new
                         {
-                            UserId = "7cd7f373-59d4-4a1b-9c68-9727d10eb0dc",
-                            RoleId = "86db2112-5804-44ae-8013-9bb59e2d731f"
+                            UserId = "a885dfe4-fa78-40e9-a240-be17a0cf5228",
+                            RoleId = "dec461cd-94e2-4f6a-b28e-f4e0c959b136"
+                        },
+                        new
+                        {
+                            UserId = "37bd5b2e-b6b4-4f9f-a603-dbc8af457044",
+                            RoleId = "9bd13248-ce3f-4517-9f8d-d7fd9a71f092"
                         });
                 });
 

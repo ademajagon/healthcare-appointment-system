@@ -27,15 +27,8 @@ namespace Application.Services
             _doctorRepository = doctorRepository;
         }
 
-        public async Task<AppointmentDto> BookAppointmentAsync(AppointmentDto appointmentDto)
+        public async Task<BookAppointmentDto> BookAppointmentAsync(BookAppointmentDto appointmentDto)
         {
-            var doctor = await _doctorRepository.GetByIdAsync(appointmentDto.DoctorId);
-
-            if (doctor == null || !doctor.IsAvailable)
-            {
-                throw new Exception("Doctor not found or not available");
-            }
-
             var appointment = new Appointment
             {
                 DoctorId = appointmentDto.DoctorId,
@@ -47,7 +40,7 @@ namespace Application.Services
 
             var addedAppointment = await _appointmentRepository.AddAsync(appointment);
 
-            return new AppointmentDto
+            return new BookAppointmentDto
             {
                 DoctorId = addedAppointment.DoctorId,
                 PatientId = addedAppointment.PatientId,
@@ -71,6 +64,7 @@ namespace Application.Services
 
             return new AppointmentDto
             {
+                Id = appointment.Id,
                 DoctorId = appointment.DoctorId,
                 PatientId = appointment.PatientId,
                 AppointmentDate = appointment.AppointmentDate,
@@ -78,25 +72,69 @@ namespace Application.Services
                 Notes = appointment.Notes,
                 Doctor = new DoctorDto
                 {
-                    Id = doctor.Id,
-                    FirstName = doctor.FirstName,
-                    LastName = doctor.LastName,
-                    Specialization = doctor.Specialization,
-                    Biography = doctor.Biography,
-                    IsAvailable = doctor.IsAvailable
+                    Id = appointment.Doctor.Id,
+                    FirstName = appointment.Doctor.FirstName,
+                    LastName = appointment.Doctor.LastName,
+                    Specialization = appointment.Doctor.Specialization,
+                    Biography = appointment.Doctor.Biography,
+                    IsAvailable = appointment.Doctor.IsAvailable
                 },
                 Patient = new PatientDto
                 {
-                    Id = patient.Id,
-                    FirstName = patient.FirstName,
-                    LastName = patient.LastName,
-                    Email = patient.Email,
-                    Address = patient.Address,
-                    DateOfBirth = patient.DateOfBirth,
-                    Gender = patient.Gender,
-                    PhoneNumber = patient.PhoneNumber
+                    Id = appointment.Patient.Id,
+                    FirstName = appointment.Patient.FirstName,
+                    LastName = appointment.Patient.LastName,
+                    DateOfBirth = appointment.Patient.DateOfBirth,
+                    Gender = appointment.Patient.Gender,
+                    Address = appointment.Patient.Address,
+                    PhoneNumber = appointment.Patient.PhoneNumber,
+                    Email = appointment.Patient.Email
                 }
             };
+        }
+
+        public async Task<IEnumerable<AppointmentDto>> GetAppointmentsByPatientIdAsync(int patientId)
+        {
+            var appointments = await _appointmentRepository.GetByPatientIdAsync(patientId);
+            var appointmentDtos = new List<AppointmentDto>();
+
+            foreach (var appointment in appointments)
+            {
+                var doctor = await _doctorRepository.GetByIdAsync(appointment.DoctorId);
+                var patient = await _patientRepository.GetByIdAsync(appointment.PatientId);
+
+                appointmentDtos.Add(new AppointmentDto
+                {
+                    Id = appointment.Id,
+                    DoctorId = appointment.DoctorId,
+                    PatientId = appointment.PatientId,
+                    AppointmentDate = appointment.AppointmentDate,
+                    AppointmentTime = appointment.AppointmentTime,
+                    Notes = appointment.Notes,
+                    Doctor = new DoctorDto
+                    {
+                        Id = doctor.Id,
+                        FirstName = doctor.FirstName,
+                        LastName = doctor.LastName,
+                        Specialization = doctor.Specialization,
+                        Biography = doctor.Biography,
+                        IsAvailable = doctor.IsAvailable
+                    },
+                    Patient = new PatientDto
+                    {
+                        Id = patient.Id,
+                        FirstName = patient.FirstName,
+                        LastName = patient.LastName,
+                        DateOfBirth = patient.DateOfBirth,
+                        Gender = patient.Gender,
+                        Address = patient.Address,
+                        PhoneNumber = patient.PhoneNumber,
+                        Email = patient.Email
+                    }
+                });
+            }
+
+            return appointmentDtos;
         }
     }
 }

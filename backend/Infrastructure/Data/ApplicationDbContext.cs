@@ -47,6 +47,8 @@ namespace Infrastructure.Data
             // Define users
             var userPatientId = Guid.NewGuid().ToString();
             var userDoctorId = Guid.NewGuid().ToString();
+            var userPatientId2 = Guid.NewGuid().ToString(); // New patient user
+
             var hasher = new PasswordHasher<ApplicationUser>();
 
             var patientUser = new ApplicationUser
@@ -61,7 +63,7 @@ namespace Infrastructure.Data
                 Gender = "Female",
                 DateOfBirth = new DateTime(1990, 2, 2),
                 EmailConfirmed = true,
-                PasswordHash = hasher.HashPassword(null, "Patient@123")
+                PasswordHash = hasher.HashPassword(null, "Patient@123"),
             };
 
             var doctorUser = new ApplicationUser
@@ -79,7 +81,22 @@ namespace Infrastructure.Data
                 PasswordHash = hasher.HashPassword(null, "Doctor@123")
             };
 
-            modelBuilder.Entity<ApplicationUser>().HasData(patientUser, doctorUser);
+            var patientUser2 = new ApplicationUser
+            {
+                Id = userPatientId2,
+                UserName = "patient2@example.com",
+                NormalizedUserName = "PATIENT2@EXAMPLE.COM",
+                Email = "patient2@example.com",
+                NormalizedEmail = "PATIENT2@EXAMPLE.COM",
+                FirstName = "SecondPatientFirstName",
+                LastName = "SecondPatientLastName",
+                Gender = "Male",
+                DateOfBirth = new DateTime(1995, 3, 3),
+                EmailConfirmed = true,
+                PasswordHash = hasher.HashPassword(null, "Patient2@123"),
+            };
+
+            modelBuilder.Entity<ApplicationUser>().HasData(patientUser, doctorUser, patientUser2);
 
             // Assign roles to users
             modelBuilder.Entity<IdentityUserRole<string>>().HasData(
@@ -92,6 +109,11 @@ namespace Infrastructure.Data
                 {
                     RoleId = roleDoctorId,
                     UserId = userDoctorId
+                },
+                new IdentityUserRole<string>
+                {
+                    RoleId = rolePatientId,
+                    UserId = userPatientId2 // Assign role to new patient user
                 }
             );
 
@@ -129,7 +151,20 @@ namespace Infrastructure.Data
                     Gender = "Female",
                     Address = "456 Oak St",
                     PhoneNumber = "987-654-3210",
-                    Email = "patient@example.com" // Same email as the patient user
+                    Email = "patient@example.com", // Same email as the patient user
+                    UserId = userPatientId
+                },
+                new Patient
+                {
+                    Id = 12, // New patient
+                    FirstName = "SecondPatientFirstName",
+                    LastName = "SecondPatientLastName",
+                    DateOfBirth = new DateTime(1995, 3, 3),
+                    Gender = "Male",
+                    Address = "789 Pine St",
+                    PhoneNumber = "123-123-1234",
+                    Email = "patient2@example.com", // Same email as the new patient user
+                    UserId = userPatientId2
                 }
             );
         }

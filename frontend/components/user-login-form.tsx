@@ -7,19 +7,31 @@ import { Icons } from "./ui/icons";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
+import { useAuth } from "@/context/AuthContext";
+import { useToast } from "./ui/use-toast";
+import { useUserStore } from "@/stores/useUserStore";
 
 interface UserAuthLoginProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 export function UserLoginForm({ className, ...props }: UserAuthLoginProps) {
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
+  const [email, setEmail] = React.useState<string>("");
+  const [password, setPassword] = React.useState<string>("");
+
+  const { login } = useAuth();
+
+  const { toast } = useToast();
+  const user = useUserStore((state) => state.user);
 
   async function onSubmit(event: React.SyntheticEvent) {
     event.preventDefault();
     setIsLoading(true);
-
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 3000);
+    try {
+      await login(email, password);
+    } catch (error) {
+      console.error("Failed to login:", error);
+    }
+    setIsLoading(false);
   }
 
   return (
@@ -38,6 +50,8 @@ export function UserLoginForm({ className, ...props }: UserAuthLoginProps) {
               autoComplete="email"
               autoCorrect="off"
               disabled={isLoading}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
 
@@ -52,6 +66,8 @@ export function UserLoginForm({ className, ...props }: UserAuthLoginProps) {
               autoCapitalize="none"
               autoCorrect="off"
               disabled={isLoading}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
           </div>
 

@@ -1,5 +1,7 @@
-﻿using Domain.Entities.Identity;
+﻿using Domain.Entities;
+using Domain.Entities.Identity;
 using Domain.Interfaces;
+using Infrastructure.Data;
 using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
@@ -13,11 +15,22 @@ namespace Infrastructure.Repositories
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly ApplicationDbContext _dbContext;
 
-        public AuthRepository(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager)
+        public AuthRepository(
+            UserManager<ApplicationUser> userManager, 
+            RoleManager<IdentityRole> roleManager, 
+            ApplicationDbContext dbContext)
         {
             _userManager = userManager;
             _roleManager = roleManager;
+            _dbContext = dbContext;
+        }
+
+        public async Task AddPatientAsync(Patient patient)
+        {
+            _dbContext.Patients.Add(patient);
+            await _dbContext.SaveChangesAsync();
         }
 
         public async Task<IdentityResult> AddToRoleAsync(ApplicationUser user, string role)

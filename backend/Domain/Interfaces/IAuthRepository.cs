@@ -1,4 +1,5 @@
-﻿using Domain.Entities.Identity;
+﻿using Domain.Entities;
+using Domain.Entities.Identity;
 using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,6 @@ namespace Domain.Interfaces
         Task<bool> RoleExistsAsync(string role);
         Task<IdentityResult> CreateRoleAsync(IdentityRole role);
         Task<ApplicationUser> FindByEmailAsync(string email);
-
+        Task AddPatientAsync(Patient patient);
     }
 }

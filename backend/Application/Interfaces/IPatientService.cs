@@ -14,5 +14,6 @@ namespace Application.Interfaces
         Task AddPatientAsync(PatientDto patientDto);
         Task UpdatePatientAsync(PatientDto patientDto);
         Task DeletePatientAsync(int id);
+        Task<PatientDto> GetPatientByUserIdAsync(string userId);
     }
 }

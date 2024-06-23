@@ -30,7 +30,8 @@ namespace Application.Services
                 Gender = patientDto.Gender,
                 Address = patientDto.Address,
                 PhoneNumber = patientDto.PhoneNumber,
-                Email = patientDto.Email
+                Email = patientDto.Email,
+                UserId = patientDto.UserId
             };
 
             return _patientRepository.AddAsync(patient);
@@ -77,6 +78,42 @@ namespace Application.Services
                 PhoneNumber = patient.PhoneNumber,
                 Email = patient.Email
              };
+        }
+
+        public async Task<PatientDto> GetPatientByUserIdAsync(int id)
+        {
+            var patient = await _patientRepository.GetByIdAsync(id);
+            if (patient == null) return null;
+
+            return new PatientDto
+            {
+                Id = patient.Id,
+                FirstName = patient.FirstName,
+                LastName = patient.LastName,
+                DateOfBirth = patient.DateOfBirth,
+                Gender = patient.Gender,
+                Address = patient.Address,
+                PhoneNumber = patient.PhoneNumber,
+                Email = patient.Email
+            };
+        }
+
+        public async Task<PatientDto> GetPatientByUserIdAsync(string userId)
+        {
+            var patient = await _patientRepository.GetByUserIdAsync(userId);
+            if (patient == null) return null;
+
+            return new PatientDto
+            {
+                Id = patient.Id,
+                FirstName = patient.FirstName,
+                LastName = patient.LastName,
+                DateOfBirth = patient.DateOfBirth,
+                Gender = patient.Gender,
+                Address = patient.Address,
+                PhoneNumber = patient.PhoneNumber,
+                Email = patient.Email
+            };
         }
 
         public async Task UpdatePatientAsync(PatientDto patientDto)

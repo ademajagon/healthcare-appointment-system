@@ -1,39 +1,52 @@
-import Link from "next/link";
+"use client";
 
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 
 export function MainNav({
   className,
   ...props
 }: React.HTMLAttributes<HTMLElement>) {
+  const pathname = usePathname();
+
   return (
     <nav
       className={cn("flex items-center space-x-4 lg:space-x-6", className)}
       {...props}
     >
       <Link
-        href="/examples/dashboard"
-        className="text-sm font-medium transition-colors hover:text-primary"
+        href="/dashboard"
+        className={cn(
+          "text-sm font-medium transition-colors hover:text-primary",
+          {
+            "text-muted-foreground": pathname !== "/dashboard",
+          }
+        )}
       >
-        Overview
+        Dashboard
       </Link>
       <Link
-        href="/examples/dashboard"
-        className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+        href="/dashboard/doctors"
+        className={cn(
+          "text-sm font-medium transition-colors hover:text-primary",
+          {
+            "text-muted-foreground": pathname !== "/dashboard/doctors",
+          }
+        )}
       >
-        Customers
+        Doctors
       </Link>
       <Link
-        href="/examples/dashboard"
-        className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+        href="/dashboard/appointments"
+        className={cn(
+          "text-sm font-medium transition-colors hover:text-primary",
+          {
+            "text-muted-foreground": pathname !== "/dashboard/appointments",
+          }
+        )}
       >
-        Products
-      </Link>
-      <Link
-        href="/examples/dashboard"
-        className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
-      >
-        Settings
+        Appointments
       </Link>
     </nav>
   );

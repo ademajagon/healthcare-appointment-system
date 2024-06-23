@@ -15,6 +15,6 @@ namespace Domain.Entities
         public Patient Patient { get; set; }
         public DateTime AppointmentDate { get; set; }
         public DateTime AppointmentTime { get; set; }
-        public string Notes { get; set; }
-    }
+        public string Notes { get; set; } 
+    } 
 }

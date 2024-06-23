@@ -15,5 +15,7 @@ namespace Application.Interfaces
         Task<IdentityResult> AddRoleAsync(ApplicationUser user, string role);
         Task<bool> RoleExistsAsync(string role);
         Task<ApplicationUser> GetUserByEmailAsync(string email);
+        Task CreatePatientAsync(ApplicationUser user, RegisterDto model);
+
     }
 }

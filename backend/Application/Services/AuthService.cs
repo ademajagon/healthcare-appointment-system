@@ -1,7 +1,9 @@
 ﻿using Application.DTOs.Identity;
 using Application.Interfaces;
+using Domain.Entities;
 using Domain.Entities.Identity;
 using Domain.Interfaces;
+using Infrastructure.Repositories;
 using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
@@ -29,6 +31,24 @@ namespace Application.Services
 
             return await _authRepository.AddToRoleAsync(user, role);
         }
+
+        public async Task CreatePatientAsync(ApplicationUser user, RegisterDto model)
+        {
+            var patient = new Patient
+            {
+                FirstName = model.FirstName,
+                LastName = model.LastName,
+                DateOfBirth = model.DateOfBirth,
+                Gender = model.Gender,
+                Address = string.Empty,
+                PhoneNumber = model.PhoneNumber,
+                Email = user.Email,
+                UserId = user.Id
+            };
+
+            await _authRepository.AddPatientAsync(patient);
+        }
+
         public async Task<ApplicationUser> GetUserByEmailAsync(string email)
         {
             return await _authRepository.FindByEmailAsync(email);

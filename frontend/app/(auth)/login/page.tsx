@@ -7,6 +7,8 @@ import { buttonVariants } from "@/components/ui/button";
 import { UserAuthForm } from "@/components/user-auth-form";
 import { Icons } from "@/components/ui/icons";
 import { UserLoginForm } from "@/components/user-login-form";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export const metadata: Metadata = {
   title: "Authentication",

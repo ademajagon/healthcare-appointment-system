@@ -9,7 +9,8 @@ namespace Application.Interfaces
 {
     public interface IAppointmentService
     {
-        Task<AppointmentDto> BookAppointmentAsync(AppointmentDto appointmentDto);
+        Task<BookAppointmentDto> BookAppointmentAsync(BookAppointmentDto appointmentDto);
         Task<AppointmentDto> GetAppointmentByIdAsync(int id);
+        Task<IEnumerable<AppointmentDto>> GetAppointmentsByPatientIdAsync(int patientId);
     }
 }

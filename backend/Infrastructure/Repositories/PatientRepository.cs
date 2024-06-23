@@ -44,6 +44,11 @@ namespace Infrastructure.Repositories
             return await _dbContext.Patients.FirstOrDefaultAsync(p => p.Id == id);
         }
 
+        public async Task<Patient> GetByUserIdAsync(string userId)
+        {
+            return await _dbContext.Patients.FirstOrDefaultAsync(p => p.UserId == userId);
+        }
+
         public Task UpdateAsync(Patient entity)
         {
             _dbContext.Entry(entity).State = EntityState.Modified;

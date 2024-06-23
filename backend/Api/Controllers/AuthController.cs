@@ -41,6 +41,8 @@ namespace Api.Controllers
                     return BadRequest(ModelState);
                 }
 
+                await _authService.CreatePatientAsync(user, model);
+
                 return Ok(new { message = "User registered successfully!" });
             }
 

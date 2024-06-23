@@ -33,5 +33,14 @@ namespace Infrastructure.Repositories
                 .Include(a => a.Patient)
                 .FirstOrDefaultAsync(a => a.Id == id);
         }
+
+        public async Task<IEnumerable<Appointment>> GetByPatientIdAsync(int patientId)
+        {
+            return await _dbContext.Appointments
+            .Include(a => a.Doctor)
+            .Include(a => a.Patient)
+            .Where(a => a.PatientId == patientId)
+            .ToListAsync();
+        }
     }
 }

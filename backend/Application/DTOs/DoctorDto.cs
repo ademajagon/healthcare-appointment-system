@@ -14,5 +14,6 @@ namespace Application.DTOs
         public string Specialization { get; set; }
         public string Biography { get; set; }
         public bool IsAvailable { get; set; }
+        public string ImageUrl { get; set; }
     }
 }

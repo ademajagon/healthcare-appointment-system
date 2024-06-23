@@ -2,6 +2,7 @@
 using Application.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace Api.Controllers
 {
@@ -59,6 +60,24 @@ namespace Api.Controllers
         {
             await _patientService.DeletePatientAsync(id);
             return NoContent();
+        }
+
+        [HttpGet("me"), Authorize]
+        public async Task<ActionResult<PatientDto>> GetMyDetails()
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (userId == null)
+            {
+                return Unauthorized();
+            }
+
+            var patient = await _patientService.GetPatientByUserIdAsync(userId);
+            if (patient == null)
+            {
+                return NotFound("Patient details not found.");
+            }
+
+            return Ok(patient);
         }
     }
 }

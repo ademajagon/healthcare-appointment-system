@@ -86,7 +86,8 @@ namespace Infrastructure.Migrations
                     Gender = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Address = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    UserId = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -233,8 +234,8 @@ namespace Infrastructure.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "65c616c0-3b3b-4e15-b82f-841466a57e27", null, "Patient", "PATIENT" },
-                    { "86db2112-5804-44ae-8013-9bb59e2d731f", null, "Doctor", "DOCTOR" }
+                    { "9bd13248-ce3f-4517-9f8d-d7fd9a71f092", null, "Patient", "PATIENT" },
+                    { "dec461cd-94e2-4f6a-b28e-f4e0c959b136", null, "Doctor", "DOCTOR" }
                 });
 
             migrationBuilder.InsertData(
@@ -242,8 +243,9 @@ namespace Infrastructure.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "DateOfBirth", "Email", "EmailConfirmed", "FirstName", "Gender", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "7cd7f373-59d4-4a1b-9c68-9727d10eb0dc", 0, "53ce2a28-7eab-4a9f-af62-9cb437b50c11", new DateTime(1980, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "doctor@example.com", true, "DoctorFirstName", "Male", "DoctorLastName", false, null, "DOCTOR@EXAMPLE.COM", "DOCTOR@EXAMPLE.COM", "AQAAAAIAAYagAAAAEDn1us7s8LeNMywPZBMh+fwfDIMrHbzcNYhfwXifakRWANrrv2oTITXjPCaw6h1K3Q==", null, false, "ef32f57f-f0fa-4223-bbfb-f69c230850eb", false, "doctor@example.com" },
-                    { "8a880be1-0f45-4feb-bc57-230828565c30", 0, "e51213ee-07b8-42fa-a5e5-e8c36c7afa7c", new DateTime(1990, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "patient@example.com", true, "PatientFirstName", "Female", "PatientLastName", false, null, "PATIENT@EXAMPLE.COM", "PATIENT@EXAMPLE.COM", "AQAAAAIAAYagAAAAEFmjyl2VOWi6foWKhv3jWdEnLEvkaQ4ig5/Ak1Av+ZcCtT4NXz0ru7QOqsOJ4eX9qQ==", null, false, "2cd07854-5f7b-4b78-a570-7b28efb955d4", false, "patient@example.com" }
+                    { "37bd5b2e-b6b4-4f9f-a603-dbc8af457044", 0, "72c4f6ce-13e3-4079-a2d7-217b4567a930", new DateTime(1995, 3, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), "patient2@example.com", true, "SecondPatientFirstName", "Male", "SecondPatientLastName", false, null, "PATIENT2@EXAMPLE.COM", "PATIENT2@EXAMPLE.COM", "AQAAAAIAAYagAAAAELiB+n68egbxFt9OgW99K97snk2lFbnhC6O7kZStDSABfGVRVb97/0R04ycLfrb+uw==", null, false, "31ffe7d8-8818-4214-92c8-bd1872aac0ad", false, "patient2@example.com" },
+                    { "a885dfe4-fa78-40e9-a240-be17a0cf5228", 0, "882c6ca2-676c-4452-a7f7-1a46b94628c0", new DateTime(1980, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "doctor@example.com", true, "DoctorFirstName", "Male", "DoctorLastName", false, null, "DOCTOR@EXAMPLE.COM", "DOCTOR@EXAMPLE.COM", "AQAAAAIAAYagAAAAENTV+Fg5UPasXTyy57GCe1PVYKphjpqyY20JwGKO0KJQgF1G+rFSYhEXjLMl0Vv4tQ==", null, false, "c4df6943-6912-4704-8c1a-ae682ee7d190", false, "doctor@example.com" },
+                    { "eeabe41e-90cd-43e0-967a-75104a03fea9", 0, "f8f6d8b1-909b-457b-97b9-85d7518e4ab9", new DateTime(1990, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "patient@example.com", true, "PatientFirstName", "Female", "PatientLastName", false, null, "PATIENT@EXAMPLE.COM", "PATIENT@EXAMPLE.COM", "AQAAAAIAAYagAAAAEH7eoB11wP3D7KK0lfVD1z5afScgHDWD8QSQnK63E/69Fg5kCcHfzCcIbmpjmOkFvQ==", null, false, "71bbfcee-7c74-4d1e-abd2-3ada3b620c10", false, "patient@example.com" }
                 });
 
             migrationBuilder.InsertData(
@@ -257,16 +259,21 @@ namespace Infrastructure.Migrations
 
             migrationBuilder.InsertData(
                 table: "Patients",
-                columns: new[] { "Id", "Address", "DateOfBirth", "Email", "FirstName", "Gender", "LastName", "PhoneNumber" },
-                values: new object[] { 11, "456 Oak St", new DateTime(1990, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "patient@example.com", "Jane", "Female", "Smith", "987-654-3210" });
+                columns: new[] { "Id", "Address", "DateOfBirth", "Email", "FirstName", "Gender", "LastName", "PhoneNumber", "UserId" },
+                values: new object[,]
+                {
+                    { 11, "456 Oak St", new DateTime(1990, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "patient@example.com", "Jane", "Female", "Smith", "987-654-3210", "eeabe41e-90cd-43e0-967a-75104a03fea9" },
+                    { 12, "789 Pine St", new DateTime(1995, 3, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), "patient2@example.com", "SecondPatientFirstName", "Male", "SecondPatientLastName", "123-123-1234", "37bd5b2e-b6b4-4f9f-a603-dbc8af457044" }
+                });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",
                 columns: new[] { "RoleId", "UserId" },
                 values: new object[,]
                 {
-                    { "86db2112-5804-44ae-8013-9bb59e2d731f", "7cd7f373-59d4-4a1b-9c68-9727d10eb0dc" },
-                    { "65c616c0-3b3b-4e15-b82f-841466a57e27", "8a880be1-0f45-4feb-bc57-230828565c30" }
+                    { "9bd13248-ce3f-4517-9f8d-d7fd9a71f092", "37bd5b2e-b6b4-4f9f-a603-dbc8af457044" },
+                    { "dec461cd-94e2-4f6a-b28e-f4e0c959b136", "a885dfe4-fa78-40e9-a240-be17a0cf5228" },
+                    { "9bd13248-ce3f-4517-9f8d-d7fd9a71f092", "eeabe41e-90cd-43e0-967a-75104a03fea9" }
                 });
 
             migrationBuilder.CreateIndex(

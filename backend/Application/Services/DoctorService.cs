@@ -28,7 +28,8 @@ namespace Application.Services
                 LastName = doctorDto.LastName,
                 Specialization = doctorDto.Specialization,
                 Biography = doctorDto.Biography,
-                IsAvailable = doctorDto.IsAvailable
+                IsAvailable = doctorDto.IsAvailable,
+                ImageUrl = doctorDto.ImageUrl
             };
 
             return _doctorRepository.AddAsync(doctor);
@@ -52,7 +53,8 @@ namespace Application.Services
                 LastName = d.LastName,
                 Specialization = d.Specialization,
                 Biography = d.Biography,
-                IsAvailable = d.IsAvailable
+                IsAvailable = d.IsAvailable,
+                ImageUrl = d.ImageUrl
             });
         }
 
@@ -71,7 +73,8 @@ namespace Application.Services
                 LastName = doctor.LastName,
                 Specialization = doctor.Specialization,
                 Biography = doctor.Biography,
-                IsAvailable = doctor.IsAvailable
+                IsAvailable = doctor.IsAvailable,
+                ImageUrl = doctor.ImageUrl
             };
         }
 
@@ -85,6 +88,7 @@ namespace Application.Services
             doctor.Specialization = doctorDto.Specialization;
             doctor.Biography = doctorDto.Biography;
             doctor.IsAvailable = doctorDto.IsAvailable;
+            doctor.ImageUrl = doctorDto.ImageUrl;
 
             await _doctorRepository.UpdateAsync(doctor);
         }
