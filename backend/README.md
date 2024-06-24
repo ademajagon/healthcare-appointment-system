@@ -49,12 +49,11 @@ The project follows the Clean Architecture principles to achieve separation of c
 - [SQL Server](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
 - [Visual Studio](https://visualstudio.microsoft.com/) or any other IDE
 
-### Running the Application
+### Clone the repository
 
-1. **Clone the repository**:
-   ```sh
-   git clone https://github.com/your-repo/healthcare-appointment-management.git
-   ```
+```sh
+  git clone https://github.com/your-repo/healthcare-appointment-management.git
+```
 
 ## Unit Testing
 
