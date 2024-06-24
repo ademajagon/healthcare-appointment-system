@@ -15,7 +15,7 @@ app
 ├── public
 ├── stores
 ├── styles
-├── types
+└── types
 
 ## Key Components
 
