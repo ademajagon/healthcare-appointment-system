@@ -4,19 +4,6 @@
 
 This project represents the frontend component of the Healthcare Appointment Management System. It is developed using Next.js 14, TypeScript, and shadcn for UI components. The system offers functionalities for user authentication, appointment management, and visualizing data through charts to monitor appointments and recent activities.
 
-## Project Structure
-
-app
-├── components
-├── context
-├── hoc
-├── hooks
-├── lib
-├── public
-├── stores
-├── styles
-└── types
-
 ## Key Components
 
 ### 1. Overview
